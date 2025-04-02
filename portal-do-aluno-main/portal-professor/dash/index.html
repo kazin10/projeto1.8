@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Portal do Aluno</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Portal do Professor</h1>
+    </header>
+
+    <main>
+        <div class="login-box">
+            <h2>Faça seu login</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal do Professor</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Portal do Aluno</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Portal do Aluno</h1>
+        <nav>
+            <a href="#atividades">Atividades</a>
+            <a href="#faltas">Faltas</a>
+            <a href="#outras-funcoes">Outras Funções</a>
+        </nav>
+    </header>
+
+    <main>
+        <details id="atividades">
+            <summary>Atividades</summary>
+            <ul id="atividades-list">
+                
+            </ul>
+            <!-- Formulário para adicionar novas atividades -->
+            <form id="form-atividade">
+                <input type="text" id="input-atividade" placeholder="Adicionar nova atividade" required>
+                <button type="submit" class="add">Adicionar</button>
+            </form>
+        </details>
+
+        <details id="faltas">
+            <summary>Faltas</summary>
+            <ul id="faltas-list">
+            
+            </ul>
+            <!-- Formulário para adicionar novas faltas -->
+            <form id="form-falta">
+                <input type="text" id="input-falta" placeholder="Adicionar nova falta" required>
+                <button type="submit" class="add">Adicionar</button>
+            </form>
+        </details>
+
+        <details id="outras-funcoes">
+            <summary>Bloco de notas</summary>
+
+            <!-- Formulário para adicionar outras funções -->
+            <form id="form-outra-funcao">
+                <input type="text" id="input-outra-funcao" placeholder="Adicionar outra função" required>
+                <button type="submit"><img src="https://img.icons8.com/?size=15&id=11153&format=png&color=000000" alt="Adicionar"></button>
+            </form>
+            <ul id="outras-funcoes-list">
+            
+            </ul>
+        </details>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal do Aluno</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

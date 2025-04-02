@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dashboard.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Aluno</title>
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Portal do Aluno</div>
+        <div class="user-info">
+            <span>Kauã Santos</span>
+            <div class="user-avatar">KS</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <i class="fas fa-home"></i> Dashboard
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="welcome-banner">
+                <h1>Bem-vindo,Kauã!</h1>
+                <p>Confira suas informações acadêmicas atualizadas</p>
+            </div>
+            
+            <div class="cards-container">
+                <!-- Card de Notas -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Notas Recentes</h2>
+                        <span class="badge badge-warning">2 novas</span>
+                    </div>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Nota</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PDM</td>
+                                <td>8.5</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Banco De Dados</td>
+                                <td>6.0</td>
+                                <td><span class="badge badge-warning">Recuperação</span></td>
+                            </tr>
+                            <tr>
+                                <td>Metodo De Pesquisa</td>
+                                <td>9.0</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Card de Frequência -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Frequência</h2>
+                        <span class="badge badge-danger">75%</span>
+                    </div>
+                    <p>Presença geral: 75%</p>
+                    <div class="attendance-progress">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Atenção:</strong> Você está próximo do limite de faltas em PDM.</p>
+                </div>
+                
+                <!-- Card de Atividades -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Próximas Atividades</h2>
+                        <span class="badge badge-warning">3 pendentes</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-title">Trabalho de PDM</div>
+                        <div class="activity-date">Entrega: 15/11/2023</div>
+                        <span class="activity-status status-pending">Pendente</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-title">Prova de Banco De Dados</div>
+                        <div class="activity-date">Data: 10/11/2023</div>
+                        <span class="activity-status status-pending">Pendente</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-title">Prova</div>
+                        <div class="activity-date">Entrega: 08/11/2023</div>
+                        <span class="activity-status status-late">Atrasado</span>
+                    </div>
+                </div>
+                
+                <!-- Card de Observações -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Observações Recentes</h2>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-title">Prof. Debora - Metodo De Pesquisa</div>
+                        <p>kauã precisa melhorar a participação nas aulas.</p>
+                        <div class="activity-date">05/11/2023</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-title">Coordenação</div>
+                        <p>Reunião de pais agendada para 20/11.</p>
+                        <div class="activity-date">01/11/2023</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Portal do Aluno</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
