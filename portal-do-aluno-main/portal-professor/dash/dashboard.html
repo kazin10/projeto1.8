@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="professor.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Professor</title>
+    <link rel="stylesheet" href="professor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -40,19 +40,136 @@
                     <div class="card-header">
                         <h2 class="card-title">Adicionar Notas</h2>
                     </div>
+                    <style>
+                        /* Estilos Minimalistas */
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 20px;
+                            background-color: #f5f5f5;
+                        }
+                
+                        /* Cards de Turma */
+                        .turma-card {
+                            background: white;
+                            padding: 15px;
+                            border-radius: 8px;
+                            margin-bottom: 15px;
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        }
+                
+                        .turma-card h3 {
+                            margin: 0 0 10px 0;
+                            color: #333;
+                        }
+                
+                        .status-turma {
+                            display: flex;
+                            justify-content: space-between;
+                            color: #666;
+                        }
+                
+                        /* Lista de Alunos */
+                        .filtros {
+                            display: flex;
+                            gap: 10px;
+                            margin: 20px 0;
+                        }
+                
+                        .filtros button {
+                            padding: 8px 15px;
+                            border: 1px solid #ddd;
+                            background: none;
+                            border-radius: 20px;
+                            cursor: pointer;
+                        }
+                
+                        .filtros button.ativo {
+                            background: #007bff;
+                            color: white;
+                            border-color: #007bff;
+                        }
+                
+                        .lista-alunos {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                
+                        .lista-alunos li {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 10px;
+                            background: white;
+                            margin-bottom: 5px;
+                            border-radius: 4px;
+                        }
+                
+                        /* Observações */
+                        .nova-observacao {
+                            display: flex;
+                            gap: 10px;
+                            margin-bottom: 15px;
+                        }
+                
+                        .nova-observacao input {
+                            flex: 1;
+                            padding: 8px;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                        }
+                
+                        .historico-observacoes p {
+                            margin: 5px 0;
+                            padding: 10px;
+                            background: white;
+                            border-radius: 4px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <!-- Seção Turmas -->
+                    <div class="turma-card">
+                        <h3>Metodo de Pesquisa</h3>
+                        <div class="status-turma">
+                            <span>✅ 25 Aprovados</span>
+                            <span>⚠️ 2 Recuperação</span>
+                            <span>Média:5.0</span>
+                        </div>
+                    </div>
+                
+                    <!-- Lista de Alunos -->
+                    <div class="filtros">
+                        <button class="ativo">Todos</button>
+                        <button>Aprovados</button>
+                        <button>Recuperação</button>
+                    </div>
+                    
+                    <ul class="lista-alunos">
+                        <li>
+                            <span>Vinicius Santana</span>
+                            <span>✅ 8.5</span>
+                        </li>
+                        <li>
+                            <span>Jennyfer de Paulo</span>
+                            <span>⚠️ 4.8</span>
+                        </li>
+                    </ul>
+                
                     <form id="grade-form">
                         <div class="form-group">
                             <label for="student">Aluno:</label>
-                            <select id="student" class="form-control">
+                            <select id="student" class="form-control" required>
                                 <option value="">Selecione um aluno</option>
                                 <option value="1">Kauã Santos</option>
-                                <option value="2">Maria Oliveira</option>
-                                <option value="3">João Silva</option>
+                                <option value="2">Vinicius Sanana</option>
+                                <option value="3">Jennyfer de Paulo</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="subject">Disciplina:</label>
-                            <select id="subject" class="form-control">
+                            <select id="subject" class="form-control" required>
                                 <option value="">Selecione a disciplina</option>
                                 <option value="PDM">PDM</option>
                                 <option value="BD">Banco de Dados</option>
@@ -61,7 +178,7 @@
                         </div>
                         <div class="form-group">
                             <label for="grade">Nota:</label>
-                            <input type="number" id="grade" class="form-control" min="0" max="10" step="0.1">
+                            <input type="number" id="grade" class="form-control" min="0" max="10" step="0.1" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Adicionar Nota</button>
                     </form>
@@ -97,14 +214,14 @@
                                     </label>
                                 </div>
                                 <div class="attendance-item">
-                                    <span>Maria Oliveira</span>
+                                    <span>Vinicius Santana</span>
                                     <label class="attendance-toggle">
                                         <input type="checkbox" checked>
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
                                 <div class="attendance-item">
-                                    <span>João Silva</span>
+                                    <span>Jennyfer de Paulo</span>
                                     <label class="attendance-toggle">
                                         <input type="checkbox" checked>
                                         <span class="slider round"></span>
@@ -155,11 +272,11 @@
                     <form id="observation-form">
                         <div class="form-group">
                             <label for="observation-student">Aluno:</label>
-                            <select id="observation-student" class="form-control">
+                            <select id="observation-student" class="form-control" required>
                                 <option value="">Selecione um aluno</option>
                                 <option value="1">Kauã Santos</option>
-                                <option value="2">Maria Oliveira</option>
-                                <option value="3">João Silva</option>
+                                <option value="2">Vinicius Santana</option>
+                                <option value="3">Jennyfer de Paulo</option>
                             </select>
                         </div>
                         <div class="form-group">

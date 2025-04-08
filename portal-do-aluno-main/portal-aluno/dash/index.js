@@ -17,14 +17,7 @@ function login(event) {
         // Redireciona para outra página após login bem-sucedido
         window.location.href = "/portal-aluno/dash/dashboard.html"; // Alterar conforme necessário
     } else {
-        // Exibe a mensagem de erro
-        if (email !== correctEmail && password !== correctPassword) {
-            errorMessage.textContent = "E-mail e senha estão incorretos!";
-        } else if (email !== correctEmail) {
-            errorMessage.textContent = "E-mail incorreto!";
-        } else if (password !== correctPassword) {
-            errorMessage.textContent = "Senha incorreta!";
-        }
+        alert("Email ou senha incorretos!")
         // Torna a mensagem visível
         errorMessage.style.display = "block";
     }

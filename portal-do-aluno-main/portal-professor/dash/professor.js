@@ -21,6 +21,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        // Filtragem de Alunos
+        document.querySelectorAll('.filtros button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filtros .ativo').classList.remove('ativo');
+                btn.classList.add('ativo');
+            });
+        });
+    
+        // Adicionar Observação
+        document.querySelector('.nova-observacao button').addEventListener('click', () => {
+            const input = document.querySelector('.nova-observacao input');
+            if(input.value) {
+                const novoItem = document.createElement('p');
+                novoItem.innerHTML = `<strong>${new Date().toLocaleDateString()}:</strong> ${input.value}`;
+                document.querySelector('.historico-observacoes').prepend(novoItem);
+                input.value = '';
+            }
+        });
+    });
+
     // Adicionar nota
     gradeForm.addEventListener('submit', function(e) {
         e.preventDefault();

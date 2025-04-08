@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="dashboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Aluno</title>
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -13,7 +12,7 @@
         <div class="logo">Portal do Aluno</div>
         <div class="user-info">
             <span>Kauã Santos</span>
-            <div class="user-avatar">KS</div>
+            <div class="user-avatar">KS</div> 
         </div>
     </header>
     
@@ -29,10 +28,11 @@
             </ul>
         </aside>
         
+  
         <main class="main-content">
             <div class="welcome-banner">
-                <h1>Bem-vindo,Kauã!</h1>
-                <p>Confira suas informações acadêmicas atualizadas</p>
+                <h1>Bem-vinda, Professora Debora!</h1>
+                <p>Gerencie as informações acadêmicas dos seus alunos</p>
             </div>
             
             <div class="cards-container">
@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td>Banco De Dados</td>
-                                <td>6.0</td>
+                                <td>4.0</td>
                                 <td><span class="badge badge-warning">Recuperação</span></td>
                             </tr>
                             <tr>
@@ -81,6 +81,11 @@
                         <div class="progress-bar" style="width: 75%;"></div>
                     </div>
                     <p style="margin-top: 1rem;"><strong>Atenção:</strong> Você está próximo do limite de faltas em PDM.</p>
+                    <ul>
+                        <li>PDM: 10 faltas (Limite: 15)</li>
+                        <li>Banco de Dados: 5 faltas (Limite: 12)</li>
+                        <li>Métodos de Pesquisa: 3 faltas (Limite: 10)</li>
+                    </ul>
                 </div>
                 
                 <!-- Card de Atividades -->
@@ -93,16 +98,19 @@
                         <div class="activity-title">Trabalho de PDM</div>
                         <div class="activity-date">Entrega: 15/11/2023</div>
                         <span class="activity-status status-pending">Pendente</span>
+                        <input type="checkbox" class="activity-checkbox" onchange="toggleActivityStatus(this, 'Trabalho de PDM')">
                     </div>
                     <div class="activity-item">
                         <div class="activity-title">Prova de Banco De Dados</div>
                         <div class="activity-date">Data: 10/11/2023</div>
                         <span class="activity-status status-pending">Pendente</span>
+                        <input type="checkbox" class="activity-checkbox" onchange="toggleActivityStatus(this, 'Prova de Banco De Dados')">
                     </div>
                     <div class="activity-item">
                         <div class="activity-title">Prova</div>
                         <div class="activity-date">Entrega: 08/11/2023</div>
                         <span class="activity-status status-late">Atrasado</span>
+                        <input type="checkbox" class="activity-checkbox" onchange="toggleActivityStatus(this, 'Prova')">
                     </div>
                 </div>
                 
@@ -118,7 +126,7 @@
                     </div>
                     <div class="activity-item">
                         <div class="activity-title">Coordenação</div>
-                        <p>Reunião de pais agendada para 20/11.</p>
+                        <p>Entrega de resultados agendada para 20/11.</p>
                         <div class="activity-date">01/11/2023</div>
                     </div>
                 </div>
@@ -128,6 +136,24 @@
     <footer>
         <p>&copy; 2025 Portal do Aluno</p>
     </footer>
+
+    <script>
+        function toggleActivityStatus(checkbox, activityTitle) {
+            const activityItem = checkbox.parentElement;
+            const statusSpan = activityItem.querySelector('.activity-status');
+            
+            if (checkbox.checked) {
+                statusSpan.textContent = 'Concluído';
+                statusSpan.classList.remove('status-pending', 'status-late');
+                statusSpan.classList.add('status-completed');
+                alert(`Atividade "${activityTitle}" concluída! Notificação enviada ao professor.`);
+            } else {
+                statusSpan.textContent = 'Pendente';
+                statusSpan.classList.remove('status-completed');
+                statusSpan.classList.add('status-pending');
+            }
+        }
+    </script>
 
     <script src="dashboard.js"></script>
 </body>
